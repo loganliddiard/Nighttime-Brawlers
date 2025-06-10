@@ -1,7 +1,6 @@
 
+spawn_timer = random_range(1,3);
 
-instance_create_layer(x, y+36, "Instances", obj_customer);
+free_seats = instance_number(obj_stool);
 
-instance_create_layer(x, y+38, "Instances", obj_customer);
-instance_create_layer(x, y+48, "Instances", obj_customer);
-instance_create_layer(x, y+36, "Instances", obj_customer);
+alarm[0] = game_get_speed(gamespeed_fps) * spawn_timer;
