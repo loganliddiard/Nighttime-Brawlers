@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_collision",
+  "%Name":"obj_bar_exit",
   "eventList":[],
   "managed":true,
-  "name":"obj_collision",
+  "name":"obj_bar_exit",
   "overriddenProperties":[],
   "parent":{
     "name":"Game Objects",

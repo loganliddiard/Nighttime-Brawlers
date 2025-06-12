@@ -6,3 +6,5 @@ draw_text(20,80,obj_player.hands[1]);
 draw_text(20,110,obj_player.hands[2]);
 
 draw_text(20,140,string(money)+"$");
+
+draw_text(20,180,obj_player.current_state);

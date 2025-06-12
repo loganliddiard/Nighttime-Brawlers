@@ -1,5 +1,5 @@
 
-current_phase = phase.serve;
+current_phase = phase.last_call;
 cs = 32;
 
 money = 0;

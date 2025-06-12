@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_collision",
-  "eventList":[],
+  "%Name":"weapons_data",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_collision",
+  "name":"weapons_data",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Objects",
-    "path":"folders/Objects/Game Objects.yy",
+    "name":"Game Data",
+    "path":"folders/Objects/Game Data.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_collision",
-    "path":"sprites/spr_collision/spr_collision.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

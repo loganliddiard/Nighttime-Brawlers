@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_collision",
+  "%Name":"obj_passable_collision",
   "eventList":[],
   "managed":true,
-  "name":"obj_collision",
+  "name":"obj_passable_collision",
   "overriddenProperties":[],
   "parent":{
     "name":"Game Objects",

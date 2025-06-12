@@ -1,15 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_collision",
+  "%Name":"obj_wall",
   "eventList":[],
   "managed":true,
-  "name":"obj_collision",
+  "name":"obj_wall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Objects",
-    "path":"folders/Objects/Game Objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_collision",
+    "path":"objects/obj_collision/obj_collision.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
