@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_windows",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"enemy_collision",
+  "eventList":[],
   "managed":true,
-  "name":"obj_windows",
+  "name":"enemy_collision",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,10 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_window",
-    "path":"sprites/spr_window/spr_window.yy",
+  "spriteId":null,
+  "spriteMaskId":{
+    "name":"Sprite20",
+    "path":"sprites/Sprite20/Sprite20.yy",
   },
-  "spriteMaskId":null,
   "visible":true,
 }

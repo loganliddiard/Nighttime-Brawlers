@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_windows",
+  "%Name":"obj_money_bag",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_windows",
+  "name":"obj_money_bag",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_window",
-    "path":"sprites/spr_window/spr_window.yy",
+    "name":"spr_money_bag",
+    "path":"sprites/spr_money_bag/spr_money_bag.yy",
   },
   "spriteMaskId":null,
   "visible":true,
