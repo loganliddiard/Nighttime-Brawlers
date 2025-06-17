@@ -13,6 +13,8 @@ enum phase {
 	serve, //customers come in and out as they please
 	last_call, //unique enemy raid
 	upkeep, // show shop menu go to next day
+	shop,
 
 }
 
+alarm[0] = game_get_speed(gamespeed_fps) * .5;

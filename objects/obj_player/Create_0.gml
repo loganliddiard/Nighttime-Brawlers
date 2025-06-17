@@ -25,6 +25,8 @@ enum play_state{
 
 }
 
+//changable variables
+extra_shop_slots = 0;
 weapon = noone;
 
 current_state = play_state.idle;
