@@ -30,3 +30,33 @@ switch(current_phase){
 	break;
 
 }
+
+
+switch(current_phase){
+
+case(phase.upkeep):
+	// UI constants
+	var bg_width  = 250;
+	var bg_height = 60;
+	var alpha     = 0.6;
+
+	// Get center of the screen
+	var mid_x = display_get_gui_width() * 0.5;
+	var mid_y = 40; // top center of screen, adjust as needed
+
+	// Draw semi-transparent background
+	draw_set_alpha(alpha);
+	draw_set_color(make_color_rgb(0, 0, 0)); // black
+	draw_roundrect(mid_x - bg_width * 0.5, mid_y - bg_height * 0.5,
+	                mid_x + bg_width * 0.5, mid_y + bg_height * 0.5,
+	                false); // no outline
+	draw_set_alpha(1); // reset alpha
+
+	// Draw money text
+	var money_text = "$" + string(money);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_set_color(c_white);
+	draw_text(mid_x, mid_y, money_text);
+break;
+}

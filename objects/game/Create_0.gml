@@ -1,11 +1,13 @@
 
 current_phase = phase.serve;
 cs = 32;
-day = 1;
+day = 3;
 
 serve_time = 30;
 last_call_time = 30;
 transition_time = 3;
+
+rent_amount = 100;
 
 money = 200;
 
@@ -25,4 +27,5 @@ enum phase {
 
 //alarm[0] = game_get_speed(gamespeed_fps) * .5;
 
+player_died = false;
 alarm[1] = game_get_speed(gamespeed_fps) * 1;

@@ -22,6 +22,20 @@ switch(current_phase){
 	break;
 	
 	case(phase.upkeep):
+	
+	//check if rent is due
+	if(day % 3 == 0){
+	
+		if(money >= rent_amount){
+				money -= rent_amount;
+				rent_amount *= 2; // double rent amount for next week
+		} else{
+			
+			room = rm_gameover;
+		
+		}
+	
+	}
 	current_phase = phase.shop;
 	
 	break;
