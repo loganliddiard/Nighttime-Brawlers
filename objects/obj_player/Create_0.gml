@@ -1,9 +1,12 @@
 
 invincible = false;
+hit_cooldown = false;
+hit_cooldown_timer = .5
+
 move_speed = 3;
 
 roll_speed = move_speed * 2;
-roll_time = .2;
+roll_time = .25;
 roll_cooldown_time = .25;
 roll_dx = 0;
 roll_dy = 0;
@@ -26,6 +29,7 @@ enum play_state{
 }
 
 //changable variables
+player_hp = 6;
 extra_shop_slots = 0;
 max_health = 3;
 shop_discount = 0;

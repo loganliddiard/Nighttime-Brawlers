@@ -1,3 +1,6 @@
+
+if(game.current_phase != phase.shop) exit;
+
 // Reset hover states
 hover_reroll  = false;
 hover_exit    = false;
@@ -71,6 +74,7 @@ if (mouse_check_button_pressed(mb_left)) {
         // Go to next day logic
 		reroll_cost = reroll_default_cost; //ensure that reroll doesn't keep going up
 		game.day +=1;
-		game.current_phase = phase.serve;
+		game.current_phase = phase.transition;
+		game.alarm[1] = game_get_speed(game.transition_time);
     }
 }

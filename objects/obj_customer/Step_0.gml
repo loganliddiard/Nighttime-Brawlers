@@ -1,4 +1,10 @@
-
+if(game.current_phase != phase.serve) {
+	
+	if(!kicked_out){
+		kicked_out = true;
+		alarm[0] = game_get_speed(gamespeed_fps) *1;	
+	}
+}
 
 switch (current_state){
 

@@ -35,6 +35,7 @@ if (ds_list_size(menu) > 0) {
 	
 }
 
+kicked_out = false;
 hide_order = true;
 
 

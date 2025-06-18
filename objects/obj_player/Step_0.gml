@@ -161,7 +161,7 @@ switch(current_state) {
 
     default:
         // Not behind bar or ducking — check if we pushed button to clamp to bar
-		if (mouse_check_button_pressed(mb_right)) {
+		if (mouse_check_button_pressed(mb_right) && game.current_phase != phase.serve) {
 			instance_create_layer(x,y-game.cs,"instances",obj_bar_check);
         }
         invincible = false; // safety check
