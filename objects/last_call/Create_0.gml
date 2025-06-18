@@ -1,4 +1,4 @@
-spawnable_enemies = [
+ spawnable_enemies = [
 	obj_beer_flight,
 	obj_beer_guy
 ]

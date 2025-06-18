@@ -1,6 +1,7 @@
 
 current_phase = phase.last_call;
 cs = 32;
+day = 1;
 
 money = 200;
 

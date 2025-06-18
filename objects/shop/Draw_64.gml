@@ -74,6 +74,7 @@ if (game.current_phase == phase.shop){
 	        draw_set_color(c_white);
 	        draw_rectangle(xx, yy, xx + slot_w, yy + slot_h, false);
         
+			if (item != undefined){
 	        // Item sprite
 	        draw_sprite_ext(item.spr, 0, xx + slot_w/2, yy + slot_h/3, 2, 2, 0, c_white, 1);
         
@@ -87,8 +88,10 @@ if (game.current_phase == phase.shop){
 			var mx = device_mouse_x_to_gui(0);
 			var my = device_mouse_y_to_gui(0);
 	        if (mx > x && mx < x + slot_w && my > y && my < y + slot_h) {
-	            hover_item = i;
-	        }
+		            hover_item = i;
+		        }			
+			}
+
 	    } else {
 	        // Draw empty slot
 	        draw_set_color(c_gray);
@@ -111,8 +114,11 @@ if (game.current_phase == phase.shop){
 	
 	if (hover_item != -1 && hover_item < array_length(items)) {
 	    var item = items[hover_item];
-	    draw_set_color(c_white);
-	    draw_text(win_x + 16, desc_y + 16, item.description);
+		if (item != undefined) {
+			draw_set_color(c_white);
+			draw_text(win_x + 16, desc_y + 16, item.description);		
+		}
+
 	} else {
 	draw_set_color(c_white);
 	    draw_text(win_x + 16, desc_y + 16, "What can I do for you?");

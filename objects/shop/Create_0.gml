@@ -1,6 +1,9 @@
 item_slots = 3;
 max_item_slots = 5;
 
+reroll_cost = 50;
+reroll_default_cost = 50;
+
 hover_item = -1;
 hover_reroll  = false;
 hover_exit    = false;
@@ -53,13 +56,17 @@ left_btn_x = win_x - btn_w - 20; // 20px gap from shop window
 top_btn_y = win_y + win_h / 2 - btn_h;
 bottom_btn_y = top_btn_y + btn_h + 10; // 10px vertical spacing
 global.shop_pool = noone;
-function populate_shop(){
-	if (global.shop_pool != noone){
-		for (var i = 0; i < visible_slots; ++i) {
-			var item = choose(global.shop_pool[0], global.shop_pool[1], global.shop_pool[2]); // or pick randomly
-			array_push(items, item);
-		}	
-	}
+function populate_shop() {
+    if (global.shop_pool != noone) {
+        items = []; // clear old items
+
+        var shuffled_pool = array_shuffle(global.shop_pool); // built-in in recent GMS2+
+        var max_items = min(visible_slots, array_length(shuffled_pool));
+
+        for (var i = 0; i < max_items; ++i) {
+            array_push(items, shuffled_pool[i]);
+        }
+    }
 }
 
 

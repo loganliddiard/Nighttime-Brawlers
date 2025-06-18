@@ -42,26 +42,35 @@ for (var i = 0; i < array_length(items); ++i) {
 if (hover_item != -1 && mouse_check_button_pressed(mb_left)) {
     var itm = items[hover_item];
     
-    if (game.money >= itm.price) {
-        game.money -= itm.price;
-        itm.onBuy(); // run the item's effect
+	if (itm!= undefined){	
+	    if (game.money >= itm.price) {
+	        game.money -= itm.price;
+	        itm.onBuy(); // run the item's effect
         
         
-        // Optional: remove or grey out item
-        items[hover_item] = undefined; // or mark as bought
-    } 
+	        // Optional: remove or grey out item
+	        items[hover_item] = undefined; // or mark as bought
+	    } 
+	}
 }
 
 
 if (mouse_check_button_pressed(mb_left)) {
     if (hover_reroll) {
         // reroll logic
-		show_message("reroll items clicked");
+		if(game.money >= reroll_cost){
+			game.money -= reroll_cost;
+			reroll_cost += 5;
+			populate_shop();	
+		}
+		
     } else if (hover_swap_merchant) {
         // reroll merchant
-		show_message("reroll merchant clicked");
+		show_message("reroll merchant clicked. Not implemented yet");
     } else if (hover_exit) {
-        // confirm logic
-		show_message("Go to next day clicked");
+        // Go to next day logic
+		reroll_cost = reroll_default_cost; //ensure that reroll doesn't keep going up
+		game.day +=1;
+		game.current_phase = phase.serve;
     }
 }
