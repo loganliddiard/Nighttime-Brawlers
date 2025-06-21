@@ -13,6 +13,6 @@ if(game.current_phase == phase.serve){
 			free_seats -=1;
 		} 
 	}
-	alarm[0] = game_get_speed(gamespeed_fps) * spawn_timer;
-	
 }
+
+alarm[0] = game_get_speed(gamespeed_fps) * spawn_timer;

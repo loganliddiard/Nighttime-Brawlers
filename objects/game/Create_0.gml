@@ -1,7 +1,7 @@
 
-current_phase = phase.serve;
+current_phase = phase.transition;
 cs = 32;
-day = 3;
+day = 1;
 
 serve_time = 30;
 last_call_time = 30;
