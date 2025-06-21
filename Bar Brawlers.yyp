@@ -46,6 +46,7 @@
     {"id":{"name":"fnt_basic","path":"fonts/fnt_basic/fnt_basic.yy",},},
     {"id":{"name":"bar_menu","path":"objects/bar_menu/bar_menu.yy",},},
     {"id":{"name":"enemy_collision","path":"objects/enemy_collision/enemy_collision.yy",},},
+    {"id":{"name":"game_over_menu","path":"objects/game_over_menu/game_over_menu.yy",},},
     {"id":{"name":"game","path":"objects/game/game.yy",},},
     {"id":{"name":"items_data","path":"objects/items_data/items_data.yy",},},
     {"id":{"name":"last_call","path":"objects/last_call/last_call.yy",},},
