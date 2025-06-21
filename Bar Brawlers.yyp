@@ -56,6 +56,7 @@
     {"id":{"name":"obj_beer_guy","path":"objects/obj_beer_guy/obj_beer_guy.yy",},},
     {"id":{"name":"obj_beer_tap","path":"objects/obj_beer_tap/obj_beer_tap.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
+    {"id":{"name":"obj_buyable_stool","path":"objects/obj_buyable_stool/obj_buyable_stool.yy",},},
     {"id":{"name":"obj_collision","path":"objects/obj_collision/obj_collision.yy",},},
     {"id":{"name":"obj_customer","path":"objects/obj_customer/obj_customer.yy",},},
     {"id":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},},

@@ -1,5 +1,5 @@
 
-current_phase = phase.transition;
+current_phase = phase.shop;
 cs = 32;
 day = 1;
 
