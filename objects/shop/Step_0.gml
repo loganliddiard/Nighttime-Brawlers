@@ -46,8 +46,8 @@ if (hover_item != -1 && mouse_check_button_pressed(mb_left)) {
     var itm = items[hover_item];
     
 	if (itm!= undefined){	
-	    if (game.money >= itm.price) {
-	        game.money -= itm.price;
+	    if (game.total_money >= itm.price) {
+	        game.total_money -= itm.price;
 	        itm.onBuy(); // run the item's effect
         
         
@@ -61,8 +61,8 @@ if (hover_item != -1 && mouse_check_button_pressed(mb_left)) {
 if (mouse_check_button_pressed(mb_left)) {
     if (hover_reroll) {
         // reroll logic
-		if(game.money >= reroll_cost){
-			game.money -= reroll_cost;
+		if(game.total_money >= reroll_cost){
+			game.total_money -= reroll_cost;
 			reroll_cost += 5;
 			populate_shop();	
 		}
@@ -74,7 +74,10 @@ if (mouse_check_button_pressed(mb_left)) {
         // Go to next day logic
 		reroll_cost = reroll_default_cost; //ensure that reroll doesn't keep going up
 		game.day +=1;
+		game.earned_money = 0;
+		populate_shop();
 		game.current_phase = phase.transition;
 		game.alarm[1] = game_get_speed(gamespeed_fps) * game.transition_time;
-    }
+		obj_player.current_state = play_state.idle;
+	}
 }

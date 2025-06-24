@@ -5,7 +5,7 @@ function check_for_drinks(search,reward){
 	if(obj_player.hands[i] == search){
 		
 		obj_player.hands[i] = -1;	
-		game.money += reward;
+		game.earned_money += reward;
 		return true;
 		
 		break;

@@ -19,15 +19,19 @@ switch(current_phase){
 	current_phase = phase.upkeep;
 	alarm[1] = game_get_speed(gamespeed_fps) * transition_time;
 	
+	total_money += earned_money;
 	break;
 	
 	case(phase.upkeep):
 	
+	
+	
+	
 	//check if rent is due
 	if(day % 3 == 0){
 	
-		if(money >= rent_amount){
-				money -= rent_amount;
+		if(total_money >= rent_amount){
+				total_money -= rent_amount;
 				rent_amount *= 2; // double rent amount for next week
 		} else{
 			

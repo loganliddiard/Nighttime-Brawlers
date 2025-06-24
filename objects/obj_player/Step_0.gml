@@ -129,6 +129,14 @@ if(keyboard_check_pressed(vk_space) && current_state != play_state.busy ){
 
 }
 
+//drops drinks in hand
+if(keyboard_check_pressed(ord("Q"))){
+	for(var i = 0; i < array_length(hands);i++){
+		
+		hands[i] = -1
+	}
+}
+
 //handle 
 
 //shoot
