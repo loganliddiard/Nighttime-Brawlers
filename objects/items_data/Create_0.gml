@@ -39,7 +39,7 @@ function spawn_stool(){
 global.shop_pool = [
 
     create_shop_item("'Shot' gun", spr_shotgun, 15, "Shoots a spread of bullets dealing a good amount of damage.",function(){ give_gun("shotgun")}),
-    create_shop_item("Hearty Wine", spr_martini, 15, "Gives you +1 max health", function() { obj_player.max_health += 1; }),
+    create_shop_item("Hearty Wine", spr_martini, 15, "Gives you +1 max health", function() { obj_player.max_health += 1; obj_player.player_hp +=1; }),
     create_shop_item("Discount", spr_register, 8, "Reduces item prices in future shops.", function() { obj_player.shop_discount += 0.1; }),
 	create_shop_item("Drink Tray",spr_reroll, 8, "Allows you to carry more drinks.", function() { array_push(obj_player.hands,-1) }),
 	create_shop_item("Extra Stool",spr_stool,50,"Allows for 1 extra seat at your bar.", function() { spawn_stool() })

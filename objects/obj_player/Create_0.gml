@@ -35,6 +35,7 @@ enum play_state{
 
 //changable variables
 player_hp = 6;
+max_health = 6;
 extra_shop_slots = 0;
 max_health = 3;
 shop_discount = 0;

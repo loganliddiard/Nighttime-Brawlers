@@ -32,5 +32,5 @@
     "path":"sprites/spr_mixtable/spr_mixtable.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

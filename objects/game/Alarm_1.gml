@@ -23,7 +23,12 @@ switch(current_phase){
 	break;
 	
 	case(phase.upkeep):
+	if(player_died){
+		player_died = false;
+		obj_player.player_hp = obj_player.max_health;
+	}	
 	
+
 	
 	
 	

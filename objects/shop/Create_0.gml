@@ -25,14 +25,14 @@ hide_items = false;
 //UI variables
 
 // Get display dimensions
-scr_w = display_get_width();
-scr_h = display_get_height();
+scr_w = display_get_gui_width();
+scr_h = display_get_gui_height();
 
 // Define shop window size
 win_w = scr_w / 2;
 win_h = scr_h / 2; 
 
-win_x = scr_w / 2 - win_w / 2;
+win_x = (scr_w / 2) - (win_w / 2);
 win_y = scr_h / 2 - win_h / 2;
 
 slots = 3;
@@ -51,6 +51,8 @@ btn_h = 96 * btn_scale;
 right_btn_x = win_x + win_w + 20;
 right_btn_y = win_y + win_h / 2 - btn_h / 2;
 	
+
+text_buffer = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ")+8;
 
 left_btn_x = win_x - btn_w - 20; // 20px gap from shop window
 top_btn_y = win_y + win_h / 2 - btn_h;

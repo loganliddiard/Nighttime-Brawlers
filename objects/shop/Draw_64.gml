@@ -7,13 +7,14 @@ if (game.current_phase == phase.shop){
 	// Draw a semi-transparent dark overlay over the full screen
 	draw_set_alpha(0.6);
 	draw_set_color(c_black);
-	draw_rectangle(0, 0, display_get_width(), display_get_height(), false);
+	draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
 	draw_set_alpha(1);
 	
 
 
-
-
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	
 	// Optional: draw a rounded translucent background
 	draw_set_color(make_color_rgb(30, 30, 30));  // dark gray
 	draw_set_alpha(0.9);
@@ -40,7 +41,7 @@ if (game.current_phase == phase.shop){
 	draw_set_alpha(1);
 	draw_set_color(c_white);
 	draw_roundrect(left_btn_x, top_btn_y, left_btn_x + btn_w, top_btn_y + btn_h, true);
-	draw_text(left_btn_x + 10, top_btn_y + 10, "Reroll");
+	draw_text_ext(left_btn_x + 10, top_btn_y + 10, "Reroll\n"+"$"+string(reroll_cost),text_buffer,btn_w-20);
 
 	// Swap merhcant Button
 	draw_set_color(make_color_rgb(50, 50, 50));
@@ -49,7 +50,7 @@ if (game.current_phase == phase.shop){
 	draw_set_alpha(1);
 	draw_set_color(c_white);
 	draw_roundrect(left_btn_x, bottom_btn_y, left_btn_x + btn_w, bottom_btn_y + btn_h, true);
-	draw_text(left_btn_x + 10, bottom_btn_y + 10, "Swap Merchant");
+	draw_text_ext(left_btn_x + 10, bottom_btn_y + 10, "Swap Merchant",text_buffer,btn_w-20);
 	
 	// Next day button
 	draw_set_color(make_color_rgb(50, 50, 50));
@@ -58,7 +59,7 @@ if (game.current_phase == phase.shop){
 	draw_set_alpha(1);
 	draw_set_color(c_white);
 	draw_roundrect(right_btn_x, right_btn_y, right_btn_x + btn_w, right_btn_y + btn_h, true);
-	draw_text(right_btn_x + 10, right_btn_y + 10, "Next Day");
+	draw_text_ext(right_btn_x + 10, right_btn_y + 10, "Next Day",text_buffer,btn_w-20);
 	
 	
 	//Draw Items
@@ -76,13 +77,14 @@ if (game.current_phase == phase.shop){
         
 			if (item != undefined){
 	        // Item sprite
-	        draw_sprite_ext(item.spr, 0, xx + slot_w/2, yy + slot_h/3, 2, 2, 0, c_white, 1);
+	        draw_sprite_ext(item.spr, 0, xx + slot_w/2, (yy + slot_h/2)+32, 2, 2, 0, c_white, 1);
         
 	        // Name and Price
-	        draw_set_color(c_white);
-	        draw_text(xx + 4, yy + slot_h - 32, item.name);
-	        draw_text(xx + 4, yy + slot_h - 16, "$" + string(item.price));
-        
+	        draw_set_color(c_black);
+			
+			draw_set_halign(fa_center);
+	        draw_text(xx + (slot_w/2), yy + slot_h - 32, "$" + string(item.price));
+			draw_set_halign(fa_left);
 	        // Hover effect
 			// Mouse position
 			var mx = device_mouse_x_to_gui(0);
@@ -116,7 +118,7 @@ if (game.current_phase == phase.shop){
 	    var item = items[hover_item];
 		if (item != undefined) {
 			draw_set_color(c_white);
-			draw_text(win_x + 16, desc_y + 16, item.description);		
+			draw_text_ext(win_x + 16, desc_y + 16,item.name+" - "+ item.description,text_buffer,win_w-16);
 		}
 
 	} else {

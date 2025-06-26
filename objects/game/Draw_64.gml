@@ -31,6 +31,7 @@ switch(current_phase){
 
 }
 
+draw_text(60,400,"Day - "+string(day));
 
 switch(current_phase){
 

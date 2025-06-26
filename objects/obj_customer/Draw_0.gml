@@ -1,4 +1,4 @@
-
+depth = 1;
 
 draw_sprite(spr_customer,0,x,y);
 
