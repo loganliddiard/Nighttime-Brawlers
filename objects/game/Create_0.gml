@@ -3,13 +3,13 @@ current_phase = phase.transition;
 cs = 32;
 day = 3;
 
-serve_time = 120;
-last_call_time = 90;
-transition_time = 3;
+serve_time = 120; //default should be 120
+last_call_time = 90; //default should be 90
+transition_time = 3; //default is 3 (may change later
 
-rent_amount = 100;
+rent_amount = 100; //first weeks rent is 100 dollars
 
-total_money = 0;
+total_money = 0; //thes should always start at zero but can be adjusted for debugging
 earned_money = 0;
 
 global.grid = mp_grid_create(0, 0, room_width div cs, room_height div cs, cs, cs);

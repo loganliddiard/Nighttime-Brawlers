@@ -10,6 +10,11 @@ roll_time = .25;
 roll_cooldown_time = .25;
 roll_dx = 0;
 roll_dy = 0;
+
+knockback_dx = 0;
+knockback_dy = 0;
+knockback_timer = 0;
+
 can_roll = true; //for cooldowns
 
 bar_move_speed = move_speed - .5;

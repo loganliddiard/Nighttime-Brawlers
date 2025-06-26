@@ -12,8 +12,8 @@
   "name":"obj_beer_guy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Beer Themed Enemies",
+    "path":"folders/Objects/Enemies/Beer Themed Enemies.yy",
   },
   "parentObjectId":{
     "name":"enemy_collision",

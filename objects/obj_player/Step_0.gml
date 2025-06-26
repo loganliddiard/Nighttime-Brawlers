@@ -9,6 +9,27 @@ if(current_state == play_state.dodge){
 }
 #endregion
 
+#region Knockback
+if (knockback_timer > 0) {
+    var new_x = x + knockback_dx;
+    var new_y = y + knockback_dy;
+
+    if (!place_meeting(new_x, y, obj_wall) && !place_meeting(new_x, y, obj_bar)) {
+        x = new_x;
+    }
+    if (!place_meeting(x, new_y, obj_wall) && !place_meeting(new_x, y, obj_bar)) {
+        y = new_y;
+    }
+
+    knockback_timer -= 1;
+
+    // Optional: ease out knockback
+    knockback_dx *= 0.8;
+    knockback_dy *= 0.8;
+
+    exit; // Skip player input for now
+}
+#endregion
 
 if(current_state == play_state.dodge || current_state == play_state.busy) exit;
 

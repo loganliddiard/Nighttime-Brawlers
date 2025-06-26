@@ -1,6 +1,8 @@
  spawnable_enemies = [
 	obj_beer_flight,
-	obj_beer_guy
+	obj_beer_guy,
+	obj_beer_brawler,
+	obj_beer_gunner
 ]
 
 
