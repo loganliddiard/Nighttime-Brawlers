@@ -8,8 +8,8 @@
   "name":"obj_windows",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Bar Objects",
+    "path":"folders/Objects/Bar Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

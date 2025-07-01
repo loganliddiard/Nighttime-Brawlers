@@ -1,9 +1,11 @@
 
 draw_set_font(fnt_basic);
 draw_text(60,20,"Hands:");
-draw_text(60,50,obj_player.hands[0]);
-draw_text(60,80,obj_player.hands[1]);
-draw_text(60,110,obj_player.hands[2]);
+
+var buff = 30;
+for(var i = 0; i < array_length(obj_player.hands);i++){
+	draw_text(60,50+(i*buff),string(obj_player.hands[i]));
+}
 
 draw_text(60,140,string(earned_money)+"$");
 draw_text(60,340,string(total_money)+"$");

@@ -9,8 +9,9 @@ transition_time = 3; //default is 3 (may change later
 
 rent_amount = 100; //first weeks rent is 100 dollars
 
-total_money = 100000; //thes should always start at zero but can be adjusted for debugging
+total_money = 1000000; //thes should always start at zero but can be adjusted for debugging
 earned_money = 0;
+tip_money = 0;
 
 global.grid = mp_grid_create(0, 0, room_width div cs, room_height div cs, cs, cs);
 mp_grid_add_instances(global.grid, obj_collision, false);
@@ -30,3 +31,5 @@ enum phase {
 
 player_died = false;
 alarm[1] = game_get_speed(gamespeed_fps) * 1;
+
+tip_chance = 0;

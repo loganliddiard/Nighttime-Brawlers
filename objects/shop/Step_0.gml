@@ -45,9 +45,10 @@ for (var i = 0; i < array_length(items); ++i) {
 if (hover_item != -1 && mouse_check_button_pressed(mb_left)) {
     var itm = items[hover_item];
     
+	var cost = itm.price-(ceil(obj_player.shop_discount*itm.price))
 	if (itm!= undefined){	
-	    if (game.total_money >= itm.price) {
-	        game.total_money -= itm.price;
+	    if (game.total_money >= cost){
+	        game.total_money -= cost;
 	        itm.onBuy(); // run the item's effect
         
         

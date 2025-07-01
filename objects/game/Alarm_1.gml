@@ -20,6 +20,9 @@ switch(current_phase){
 	alarm[1] = game_get_speed(gamespeed_fps) * transition_time;
 	
 	total_money += earned_money;
+	total_money += tip_money;
+	tip_money = 0;
+	earned_money = 0;
 	break;
 	
 	case(phase.upkeep):

@@ -8,8 +8,8 @@
   "name":"obj_stool",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Bar Objects",
+    "path":"folders/Objects/Bar Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_seat",

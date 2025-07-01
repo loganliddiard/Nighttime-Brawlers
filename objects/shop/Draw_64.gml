@@ -83,7 +83,8 @@ if (game.current_phase == phase.shop){
 	        draw_set_color(c_black);
 			
 			draw_set_halign(fa_center);
-	        draw_text(xx + (slot_w/2), yy + slot_h - 32, "$" + string(item.price));
+			var cost = ceil(item.price-(item.price*obj_player.shop_discount));
+	        draw_text(xx + (slot_w/2), yy + slot_h - 32, "$" + string(cost));
 			draw_set_halign(fa_left);
 	        // Hover effect
 			// Mouse position
