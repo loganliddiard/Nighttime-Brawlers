@@ -6,8 +6,8 @@
   "name":"obj_beer_station_empty",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bar Objects",
-    "path":"folders/Objects/Bar Objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -53,13 +53,52 @@ if (!found) {show_message("Error! Attempted to modify price of  " +target_drink 
 
 function install_station(station){
 
-	if(station.station_type == "Beer"){
+	var target = noone;
+	var temp_val = -1;
+	if(station.type == "beer"){
+
+		var num_free_taps = instance_number(obj_beer_station_empty);
+		for (var i = 0; i < num_free_taps; i++) {
+		  var tap = instance_find(obj_beer_station_empty, i);
+		  if (instance_exists(tap)) { // Check if the instance still exists
+				if(temp_val == -1 || tap.x < temp_val){ 
+					temp_val = tap.x;
+					target = tap;
+					}
+		  }
+		}
 		
+		var tap = instance_create_layer(target.x,target.y,"Instances",obj_beer_tap);
+		
+		with (tap){
+			drink_name = station.name;
+			sprite = station.table_sprite;
+		}
+		add_active_menu_item(station.name);
+		instance_destroy(target);
 	}
 	else{
+		var num_free_taps = instance_number(obj_mixtable_emtpy);
+		for (var i = 0; i < num_free_taps; i++) {
+		  var tap = instance_find(obj_mixtable_emtpy, i);
+		  if (instance_exists(tap)) { // Check if the instance still exists
+				if(temp_val == -1 || tap.x > temp_val) {
+					temp_val = tap.x;
+					target = tap;
+				}
+				
+		  }
+		}
 		
+		var tap = instance_create_layer(target.x,target.y,"Instances",obj_mixtable);
+		
+		with (tap){
+			drink_name = station.name;
+			sprite = station.table_sprite;
+		}
+		add_active_menu_item(station.name);
+		instance_destroy(target);
 	}
-
 }
 // Fill the pool
 global.shop_pool = [
@@ -71,7 +110,11 @@ global.shop_pool = [
 	create_shop_item("Extra Stool",spr_stool,75,"Allows for 1 extra seat at your bar.", function() { spawn_stool() }),
 	create_shop_item("Quality Wheat",spr_beer,100,"Sell price of Beer is doubled.", function() { modify_price("Beer",2) }),
 	create_shop_item("Quality Olives",spr_martini,100,"Sell price of Martinis is doubled.", function() {  modify_price("Martini",2)}),
-	create_shop_item("Tip Jar",spr_register,75,"Increases chances of customers to tip by 10%.", function() {  game.tip_chance += 1})
+	create_shop_item("Tip Jar",spr_register,75,"Increases chances of customers to tip by 10%.", function() {  game.tip_chance += 1}),
+	create_shop_item("Amber Ale Tap",spr_amber_ale,100,"Places Amber Ale on the menu and installs on a free beer tap. Base selling price is $"+string(get_menu_item("Amber Ale").price), function() {  install_station(get_menu_item("Amber Ale"))}),
+	create_shop_item("IPA Tap",spr_ipa,125,"Places IPAs on the menu and installs on a free beer tap. Base selling price is $"+string(get_menu_item("IPA").price), function() { install_station(get_menu_item("IPA"))}),
+	create_shop_item("Lemon Drop Station",spr_lemon_drop,150,"Places Lemon Drops on the menu and installs on a free mixing station. Base selling price is $"+string(get_menu_item("Lemon Drop").price), function() { install_station(get_menu_item("Lemon Drop"))}),
+	create_shop_item("Rum and Cola Station",spr_rum_and_cola,150,"Places Rum and Colas on the menu and installs on a free mixing station. Base selling price is $"+string(get_menu_item("Rum and Cola").price), function() { install_station(get_menu_item("Rum and Cola"))}),
 	
 ];
 

@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Bar Objects",
-    "path":"folders/Objects/Bar Objects.yy",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

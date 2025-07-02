@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"station sprites",
+    "path":"folders/Sprites/icons/station sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
