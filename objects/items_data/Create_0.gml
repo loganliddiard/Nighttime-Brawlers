@@ -115,7 +115,9 @@ global.shop_pool = [
 	create_shop_item("IPA Tap",spr_ipa,125,"Places IPAs on the menu and installs on a free beer tap. Base selling price is $"+string(get_menu_item("IPA").price), function() { install_station(get_menu_item("IPA"))}),
 	create_shop_item("Lemon Drop Station",spr_lemon_drop,150,"Places Lemon Drops on the menu and installs on a free mixing station. Base selling price is $"+string(get_menu_item("Lemon Drop").price), function() { install_station(get_menu_item("Lemon Drop"))}),
 	create_shop_item("Rum and Cola Station",spr_rum_and_cola,150,"Places Rum and Colas on the menu and installs on a free mixing station. Base selling price is $"+string(get_menu_item("Rum and Cola").price), function() { install_station(get_menu_item("Rum and Cola"))}),
-	
+	create_shop_item("Olive Launcher", spr_olive_launcher, 150, "Shoots lots of olives really fast!",function(){ give_gun("olive launcher")}),
+	create_shop_item("Pirates Pleasure", spr_pirates_pleasure, 150, "Shoots heavier bullets that deal a good amount of damage",function(){ give_gun("pirates pleasure")}),
+	create_shop_item("Sour Shooter", spr_sour_shooter, 150, "Shoots lemons at high speed.",function(){ give_gun("sour shooter")}),
 ];
 
 shop.populate_shop();

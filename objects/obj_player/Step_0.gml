@@ -161,15 +161,35 @@ if(keyboard_check_pressed(ord("Q"))){
 //handle 
 
 //shoot
-if(mouse_check_button_pressed(mb_left)){
+if(weapon.is_auto){
+	if(mouse_check_button(mb_left) && can_fire){
 
-	if(game.current_phase == phase.last_call && (current_state != play_state.ducking && current_state != play_state.dodge)){
+		if(game.current_phase == phase.last_call && (current_state != play_state.ducking && current_state != play_state.dodge)){
 	
-		weapon.fire_function(self);
+			weapon.fire_function(self);
+			can_fire = false;
+			alarm[3] = game_get_speed(gamespeed_fps) * weapon.cooldown;
 		
+		}
+
 	}
 
 }
+else{
+	if(mouse_check_button_pressed(mb_left) && can_fire){
+
+		if(game.current_phase == phase.last_call && (current_state != play_state.ducking && current_state != play_state.dodge)){
+	
+			weapon.fire_function(self);
+			can_fire = false;
+						can_fire = false;
+			alarm[3] = game_get_speed(gamespeed_fps) * weapon.cooldown;
+		
+		}
+
+	}
+}
+
 
 // === Duck Behind Bar ===
 switch(current_state) {
