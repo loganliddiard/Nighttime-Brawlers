@@ -1,5 +1,5 @@
 
-current_phase = phase.upkeep;
+current_phase = phase.transition;
 cs = 32;
 day = 1;
 

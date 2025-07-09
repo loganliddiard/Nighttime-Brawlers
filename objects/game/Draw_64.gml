@@ -1,18 +1,14 @@
 
 draw_set_font(fnt_basic);
-draw_text(60,20,"Hands:");
 
-var buff = 30;
-for(var i = 0; i < array_length(obj_player.hands);i++){
-	draw_text(60,50+(i*buff),string(obj_player.hands[i]));
-}
+
+
+
+
 
 draw_text(60,140,string(earned_money)+"$");
 draw_text(60,340,string(total_money)+"$");
-if(instance_exists(obj_player)){
-	draw_text(60,180,obj_player.current_state);
-	draw_text(60, 280,"Health: "+string(obj_player.player_hp));
-}
+
 
 //from to swap
 switch(current_phase){
@@ -22,16 +18,41 @@ switch(current_phase){
 	
 	break;
 	case(phase.serve):
-	
+	var buff = 30;
 	draw_text(60,220,"Serving Phase");
+	draw_text(60,20,"Hands:");
+	for(var i = 0; i < array_length(obj_player.hands);i++){
+		
+		
+		var img = get_menu_item(obj_player.hands[i]);
+		if (img!= -1) draw_sprite_ext(img.icon,0,60+(i*buff*2),120,2,2,0,c_white,1);
+	}
+	
 	break;
 	
 	case(phase.last_call):
 	draw_text(60,220,"Last Call Phase");
+	
+	if (instance_exists(obj_player)) {
+	    draw_text(60,180,obj_player.current_state);
+	    draw_text(60,20,"Health:");
 
-	break;
+	    var flip = 1;
+	    var buff = 45;
+	    var adjust = false;
+	    var i = 0;
 
-}
+	    repeat(obj_player.player_hp) {
+	        flip *= -1; // flip BEFORE drawing
+	        draw_sprite_ext(spr_heart, 0, 60 + (floor(i / 2) * buff * 2) + (adjust * 20 * 2), 120, flip * 2, 2, 0, c_white, 1);
+
+	        adjust = !adjust;
+	        i++;
+	    }
+	}
+		break;
+
+	}
 
 draw_text(60,400,"Day - "+string(day));
 
