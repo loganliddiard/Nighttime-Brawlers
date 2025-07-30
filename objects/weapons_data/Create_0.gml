@@ -7,7 +7,9 @@ global.weapons = [
         cooldown: .5,
 		bullet_speed: 6,
         sprite: spr_pistol,
+		scale: .5,
 		is_auto: false, 
+		
         fire_function: function(player) {
 
             initialize_bullet(damage,lifetime,irandom_range(-10, 10),bullet_speed)
@@ -22,6 +24,7 @@ global.weapons = [
 		bullet_speed: 10,
         pellets: 5,
         sprite: spr_shotgun,
+		scale: 1,
 		is_auto: false, 
         fire_function: function(player) {
             for (var i = 0; i < 5; i++) {
@@ -38,6 +41,8 @@ global.weapons = [
 	bullet_speed: 8,
 	is_auto: true,
     sprite: spr_olive_launcher,
+	scale: 1,
+	
     fire_function: function(player) {
         
 		initialize_bullet(damage,lifetime,irandom_range(-40, 40),bullet_speed)
@@ -53,6 +58,7 @@ global.weapons = [
 	bullet_speed: 6,
 	is_auto: true,
     sprite: spr_pirates_pleasure,
+	scale: 1,
     fire_function: function(player) {
     
 	initialize_bullet(damage,lifetime,irandom_range(-30, 30),bullet_speed)
@@ -68,6 +74,7 @@ global.weapons = [
 	bullet_speed: 12,
 	is_auto: false,
     sprite: spr_sour_shooter,
+	scale: 1,
     fire_function: function(player) {
       
      initialize_bullet(damage,lifetime,irandom_range(-2, 2),bullet_speed)
@@ -77,4 +84,4 @@ global.weapons = [
 ];
 
 
-obj_player.weapon = global.weapons[0];
+obj_player.weapon = global.weapons[3];

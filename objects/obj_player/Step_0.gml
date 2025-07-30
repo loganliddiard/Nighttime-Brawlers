@@ -86,7 +86,6 @@ switch(current_state){
 		    if (abs(h_input) > abs(v_input)) {
 		        facing_direction = (h_input > 0) ? "right" : "left";
 				
-				sprite_dir = ((h_input > 0) ? 1 : -1);
 		    } else {
 		        facing_direction = (v_input > 0) ? "down" : "up";
 		    }
@@ -112,7 +111,18 @@ switch(current_state){
 
 }
 
+// Update sprite direction
+if (game.current_phase != phase.last_call) {
+	
+	if(h_input != 0){
+		sprite_dir = (h_input > 0) ? 1 : -1;
+	}
 
+} else {
+	
+	var dx = device_mouse_x(0) - x;
+	sprite_dir = (dx >= 0) ? 1 : -1;
+}
 
 #endregion
 
@@ -280,5 +290,4 @@ else {
 	hands_animation_state = HandAnim.IDLE;
 }
 
-show_debug_message(hands_animation_state);
 #endregion
