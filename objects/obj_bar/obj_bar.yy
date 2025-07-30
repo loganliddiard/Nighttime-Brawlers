@@ -6,7 +6,7 @@
   "name":"obj_bar",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bar Objects",
+    "name":"Objects",
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
@@ -35,5 +35,5 @@
     "path":"sprites/spr_bar/spr_bar.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

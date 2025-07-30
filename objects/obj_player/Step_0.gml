@@ -36,10 +36,25 @@ if(current_state == play_state.dodge || current_state == play_state.busy) exit;
 #region Movement
 // === Handle Movement ===
 
+
+// Get input first
+var h_input = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+var v_input = keyboard_check(ord("S")) - keyboard_check(ord("W"));
+
+// Handle walk vs idle
+if (current_state == play_state.walk || current_state == play_state.idle) {
+	if (h_input != 0 || v_input != 0) {
+		current_state = play_state.walk;
+	} else {
+		current_state = play_state.idle;
+	}
+}
+
 switch(current_state){
 	case play_state.idle:
 	case play_state.walk:
-	
+
+		
 			// Horizontal movement
 		var h_input = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 		var h_pixel = sign(h_input);
@@ -70,6 +85,8 @@ switch(current_state){
 		if (h_input != 0 || v_input != 0) {
 		    if (abs(h_input) > abs(v_input)) {
 		        facing_direction = (h_input > 0) ? "right" : "left";
+				
+				sprite_dir = ((h_input > 0) ? 1 : -1);
 		    } else {
 		        facing_direction = (v_input > 0) ? "down" : "up";
 		    }
@@ -77,7 +94,9 @@ switch(current_state){
 	break;
 	
 	case(play_state.behind_bar):
-
+		
+		
+		
 		// Horizontal movement
 		var h_input = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 		var h_pixel = sign(h_input);
@@ -217,4 +236,49 @@ switch(current_state) {
         break;
 }
 
+#endregion
+
+#region Update Animation State
+
+// Base body animation
+switch(current_state) {
+	case play_state.dodge:
+		animation_state = BaseAnim.DODGE;
+		break;
+
+	case play_state.walk:
+		animation_state = BaseAnim.WALK;
+		break;
+
+	case play_state.behind_bar:
+	case play_state.idle:
+	default:
+		animation_state = BaseAnim.IDLE;
+		break;
+}
+
+// Hands animation
+var has_gun = (weapon != noone); // Replace with your actual condition
+var has_drink = false;
+for (var i = 0; i < array_length(hands); i++) {
+	if (hands[i] != -1) {
+		has_drink = true;
+		break;
+	}
+}
+
+if (has_gun && game.current_phase == phase.last_call) {
+	hands_animation_state = HandAnim.GUN_BASE; // Expand this to point to weapon ID offset later
+}
+else if (has_drink) {
+	hands_animation_state = HandAnim.DRINK;
+}
+else if (current_state == play_state.walk) {
+	hands_animation_state = HandAnim.WALK;
+}
+else {
+	hands_animation_state = HandAnim.IDLE;
+}
+
+show_debug_message(hands_animation_state);
 #endregion

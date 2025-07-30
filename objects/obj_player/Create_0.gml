@@ -1,4 +1,8 @@
 
+spr_player_base = spr_frank_sprite_sheet;
+spr_player_hands = spr_hands_sheet;
+
+
 invincible = false;
 hit_cooldown = false;
 hit_cooldown_timer = .5
@@ -33,6 +37,26 @@ enum play_state{
 
 }
 
+// Base rows
+enum BaseAnim {
+    IDLE = 0,
+    WALK = 1,
+    DODGE = 2,
+    BACK = 3  // Eventually
+}
+
+// Hand rows
+enum HandAnim {
+    IDLE = 0,
+    WALK = 1,
+    DRINK = 2,
+    GUN_BASE = 3  // Start gun rows here
+}
+
+animation_state = BaseAnim.IDLE;
+hands_animation_state = HandAnim.IDLE;
+
+
 //changable variables
 player_hp = 6;
 max_health = 6;
@@ -42,5 +66,5 @@ shop_discount = 0;
 weapon = noone;
 can_fire = true;
 current_state = play_state.idle;
-
+sprite_dir = 1; // 1 -> right, -1 -> left
 hands = [-1,-1,-1]
