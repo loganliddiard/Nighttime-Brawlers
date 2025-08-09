@@ -128,13 +128,15 @@ if (game.current_phase != phase.last_call) {
 
 #region Actions
 //handle interact button / roll / 
-if(keyboard_check_pressed(vk_space) && current_state != play_state.busy ){
 
-	if(game.current_phase == phase.serve){
-		handle_interaction(facing_direction,x,y);
-	}
-	else if (game.current_phase == phase.last_call){
-		
+
+switch (game.current_phase){
+
+	case phase.last_call:
+	
+	
+	
+	if(keyboard_check_pressed(vk_space) && current_state != play_state.busy){
 		switch(current_state){
 		
 			case play_state.behind_bar:
@@ -168,16 +170,55 @@ if(keyboard_check_pressed(vk_space) && current_state != play_state.busy ){
 				    }
 				}			
 			}
-			
-
-			
 		}
-
+	}
+	
+	
+	
+	break;
+	default:
+	//TODO: Logic here needs to be cleaned up and eventually include controller support
+	if(keyboard_check(vk_space) && current_state != play_state.busy){
+		press_time += 1
+		pressing = true
+		//handles long presses
+		if (press_time >= press_threshold && !action_fired){
+		
+			press_time = 0;
+			action_fired = true;
+			handle_interaction(facing_direction,"Long",x,y);
+			
+			}
+		} 
+		else
+		{
+			//handles short presses
+			if(pressing && !action_fired){
+				
+				press_time = 0;
+				action_fired = true;
+				handle_interaction(facing_direction,"Short",x,y);
+			}
+	
 	
 	}
-	//cannot interact when in different phase. Roll instead!
+	//resets our variables
+	if(keyboard_check_released(vk_space)){
+		action_fired = false;
+		press_time = false
+		pressing = false;
+	
+	}
+	
+	
+	break;
+	
+	}
+	
 
-}
+
+
+
 
 //drops drinks in hand
 if(keyboard_check_pressed(ord("Q"))){

@@ -57,6 +57,12 @@ animation_state = BaseAnim.IDLE;
 hands_animation_state = HandAnim.IDLE;
 
 
+//press duration variables
+press_time = 0;
+pressing = false;
+action_fired = false;
+press_threshold = 0.5 * game_get_speed(gamespeed_fps); // ~0.8s
+
 //changable variables
 player_hp = 6;
 max_health = 6;

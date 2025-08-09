@@ -57,55 +57,66 @@ draw_sprite_part_ext(
     1
 );
 
-// Draw the hands at half size
-draw_sprite_part_ext(
-	spr_player_hands,
-	0,
-	hands_x,
-	hands_y, 
-	frame_width,
-	frame_height,
-    draw_x,
-    draw_y,
-    scale * flip,
-    scale,
-	c_white, 
-	1
-);
+#region rendering hands
+switch (game.current_phase){
 
-var center_x = x;
-var center_y = y - (frame_height/4);       // align to bottom
 
-// Step 1: Get aiming angle from player to mouse
-var mx = device_mouse_x(0);
-var my = device_mouse_y(0);
-var aim_angle = point_direction(center_x, center_y, mx, my); // in degrees
+	case phase.last_call:
+		
+		var center_x = x;
+		var center_y = y - (frame_height/4);       // align to bottom
 
-// Step 2: Choose the distance from the player (radius of the ring)
-var gun_radius = 16; // You can tweak this — 16 to 24 looks good usually
+		// Step 1: Get aiming angle from player to mouse
+		var mx = device_mouse_x(0);
+		var my = device_mouse_y(0);
+		var aim_angle = point_direction(center_x, center_y, mx, my); // in degrees
 
-// Step 3: Calculate gun position on the ring
-var gun_x = center_x + lengthdir_x(gun_radius, aim_angle);
-var gun_y = center_y + lengthdir_y(gun_radius, aim_angle);
+		// Step 2: Choose the distance from the player (radius of the ring)
+		var gun_radius = 16; // You can tweak this — 16 to 24 looks good usually
 
-// Step 4: Choose the gun sprite and scale
-var gun_sprite = weapon.sprite;
-var gun_frame = 1;
-var scale = weapon.scale;
+		// Step 3: Calculate gun position on the ring
+		var gun_x = center_x + lengthdir_x(gun_radius, aim_angle);
+		var gun_y = center_y + lengthdir_y(gun_radius, aim_angle);
 
-// Step 5: Draw gun at that point, rotated to aim
-draw_sprite_ext(
-    gun_sprite,
-    gun_frame,
-    gun_x,
-    gun_y,
-    scale,
-    scale*sprite_dir,
-    aim_angle,
-    c_white,
-    1
-);
+		// Step 4: Choose the gun sprite and scale
+		var gun_sprite = weapon.sprite;
+		var gun_frame = 1;
+		var scale = weapon.scale;
 
+		// Step 5: Draw gun at that point, rotated to aim
+		draw_sprite_ext(
+		    gun_sprite,
+		    gun_frame,
+		    gun_x,
+		    gun_y,
+		    scale,
+		    scale*sprite_dir,
+		    aim_angle,
+		    c_white,
+		    1
+		);
+	
+	break;
+	default:
+		// Draw the hands at half size
+		draw_sprite_part_ext(
+			spr_player_hands,
+			0,
+			hands_x,
+			hands_y, 
+			frame_width,
+			frame_height,
+		    draw_x,
+		    draw_y,
+		    scale * flip,
+		    scale,
+			c_white, 
+			1
+		);
+}
+#endregion
+
+//for debugging
 //draw_circle_color(center_x, center_y, gun_radius, c_lime, c_lime, true);
 //draw_line(center_x, center_y, mx, my);
 
