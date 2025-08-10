@@ -5,7 +5,7 @@ menu_master = ds_list_create();
 menu_active = ds_list_create();
 
 //Add items on game start
-ds_list_add(menu_master,create_menu_item("Beer", "beer",5, spr_beer,spr_beertap,noone));
+ds_list_add(menu_master,create_menu_item("Beer", "beer",5, spr_beer,spr_beertap,pour_beer));
 ds_list_add(menu_master,create_menu_item("Martini","cocktail",7,spr_martini,spr_mixtable,noone));
 
 ds_list_add(menu_master,create_menu_item("IPA","beer",10,spr_ipa,spr_ipa_tap,noone));

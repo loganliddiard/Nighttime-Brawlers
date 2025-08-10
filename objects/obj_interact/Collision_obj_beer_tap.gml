@@ -17,6 +17,7 @@ if(type == "Long"){
 	//initialize minigame
 	
 	obj_player.current_state = play_state.busy;
+	micro_game.activate(other.mini_game)
 	
 	
 
