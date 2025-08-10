@@ -1,55 +1,42 @@
-// Logical canvas (match your base if you already set one)
-logical_w = 320;
-logical_h = 180;
+// Create
+drink_reward   = "Martini";
+amount_awarded = 0;
 
-// Glass ellipse in logical space (center + radii)
-glass_cx = logical_w * 0.5;
-glass_cy = logical_h * 0.60;
-glass_rx = 110;
-glass_ry = 60;
+result = "Lost";
+timer  = 5;
 
-// Olives
-olive_count = 6;
-olives = [];
-olive_r = 4;           // logical radius (before scale)
-olive_speed = 18;      // px/sec-ish (tweak)
+olive_x = display_get_gui_width()/2;
+olive_y = display_get_gui_height()/2;
 
-// Toothpick orbit + stab
-pick_angle = -90;              // degrees, starts at top
-orbit_deg_per_sec = 90;        // speed around rim
-stab_state = "orbit";          // "orbit" | "stab" | "return"
-stab_t = 0;
-stab_duration = 0.30 * room_speed;
-return_duration = 0.25 * room_speed;
-pick_thickness = 2;            // line thickness (draw)
+pick_x = display_get_gui_width()/2;
+pick_y = display_get_gui_height()/2;
 
-// Spawn olives inside the ellipse
-function _rand_in_ellipse() {
-    // Rejection sampling until inside
-    var xx, yy, dx, dy;
-    repeat (1000) {
-        x = irandom_range(floor(glass_cx - glass_rx + olive_r), floor(glass_cx + glass_rx - olive_r));
-        y = irandom_range(floor(glass_cy - glass_ry + olive_r), floor(glass_cy + glass_ry - olive_r));
-        dx = (x - glass_cx) / glass_rx;
-        dy = (y - glass_cy) / glass_ry;
-        if (dx*dx + dy*dy <= 1) return [x, y];
-    }
-    return [glass_cx, glass_cy];
-}
+olive_speed = 1;
+olive_r = 16;
+olive_skewed = false;
 
-for (var i = 0; i < olive_count; i++) {
-    var p = _rand_in_ellipse();
-    var ang = irandom_range(0,359);
-    var spd = olive_speed * (0.6 + random(0.8)); // slight variation
-    olives[i] = {
-        x: p[0], y: p[1],
-        vx: lengthdir_x(spd/room_speed, ang),
-        vy: lengthdir_y(spd/room_speed, ang),
-        r: olive_r,
-        hit: false
-    };
-}
+can_skewer = true;
+skewer_speed = 2;
 
-// Visual scaling/window (if not inherited from your base)
-integer_scale = true;
-pad = 10;
+cx = display_get_gui_width()/2;          // center x
+cy = display_get_gui_height()/2;          // center y
+radius = 160;     // orbit radius
+theta  = 0;      // current angle (degrees)
+omega  = 2;      // angular speed (deg/step)
+spr_pick = spr_skewer; // 
+
+orb_x = cx + lengthdir_x(radius, theta);
+orb_y = cy + lengthdir_y(radius, theta);
+
+dir = irandom_range(0, 359);
+
+rotate = irandom_range(0, 359);
+sk_x = orb_x;
+sk_y = orb_y;
+home_x = -1;
+home_y = -1;
+stab_phase = 0;
+stab_spd = 10;
+stab_dir = -1;
+
+alarm[0] = game_get_speed(gamespeed_fps) * timer;

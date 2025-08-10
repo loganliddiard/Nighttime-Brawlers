@@ -14,7 +14,7 @@ foam = 0;
 
 display_poured = 0; // for smooth animation
 
-alarm[0] = room_speed * timer;
+alarm[0] = game_get_speed(gamespeed_fps) * timer;
 
 pour_liquid_per_step = random_range(.35,1);     // liquid added each step while holding
 foam_build_per_step  = random_range(1.5,3);   // foam added each step while holding
