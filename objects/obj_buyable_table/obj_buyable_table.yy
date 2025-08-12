@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_register",
-  "eventList":[],
+  "%Name":"obj_buyable_table",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_register",
+  "name":"obj_buyable_table",
   "overriddenProperties":[],
   "parent":{
     "name":"Bar Objects",
@@ -28,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_register",
-    "path":"sprites/spr_register/spr_register.yy",
+    "name":"spr_table",
+    "path":"sprites/spr_table/spr_table.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

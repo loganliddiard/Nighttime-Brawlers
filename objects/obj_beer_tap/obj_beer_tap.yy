@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"group1",
-    "path":"folders/Objects/group1.yy",
+    "path":"folders/Objects/Bar Objects/group1.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Bar Objects",
-    "path":"folders/Objects.yy",
+    "path":"folders/Objects/Bar Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_seat",

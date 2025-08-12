@@ -35,6 +35,16 @@ function spawn_stool(){
 
 }
 
+function spawn_table(){
+	var total = instance_number(obj_buyable_table);
+	if (total > 0) {
+		var random_index = irandom(total - 1);
+		var selected_stool = instance_find(obj_buyable_table, random_index);
+		instance_destroy(selected_stool);
+	}
+
+}
+
 function modify_price(target_drink, percent_change){
 
 	var found = false;
@@ -120,6 +130,7 @@ global.shop_pool = [
 	create_shop_item("Olive Launcher", spr_olive_launcher, 150, "Shoots lots of olives really fast!",function(){ give_gun("olive launcher")}),
 	create_shop_item("Pirates Pleasure", spr_pirates_pleasure, 150, "Shoots heavier bullets that deal a good amount of damage",function(){ give_gun("pirates pleasure")}),
 	create_shop_item("Sour Shooter", spr_sour_shooter, 150, "Shoots lemons at high speed.",function(){ give_gun("sour shooter")}),
+	create_shop_item("Table Set", spr_table, 200, "Gives you +2 seats in your bar.",function(){ spawn_table()}),
 ];
 
 shop.populate_shop();

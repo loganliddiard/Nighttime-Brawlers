@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_register",
+  "%Name":"obj_passive_income_slot",
   "eventList":[],
   "managed":true,
-  "name":"obj_register",
+  "name":"obj_passive_income_slot",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bar Objects",
-    "path":"folders/Objects/Bar Objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_register",
-    "path":"sprites/spr_register/spr_register.yy",
+    "name":"spr_window",
+    "path":"sprites/spr_window/spr_window.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
