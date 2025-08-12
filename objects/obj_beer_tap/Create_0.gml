@@ -1,3 +1,3 @@
 drink_name = "Beer" //beer by default
 sprite = spr_beertap;
-mini_game = memory_taps;
+mini_game = pour_beer;
