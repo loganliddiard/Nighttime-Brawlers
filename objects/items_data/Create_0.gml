@@ -73,6 +73,7 @@ function install_station(station){
 		with (tap){
 			drink_name = station.name;
 			sprite = station.table_sprite;
+			mini_game = station.mini_game;
 		}
 		add_active_menu_item(station.name);
 		instance_destroy(target);
