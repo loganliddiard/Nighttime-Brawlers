@@ -1,3 +1,8 @@
+
+//perks that add multipliers, effects, etc.
+long_barrel = false;
+
+
 global.weapons = [
     {
         id: "pistol",
@@ -80,8 +85,24 @@ global.weapons = [
      initialize_bullet(damage,lifetime,irandom_range(-2, 2),bullet_speed)
         
     }
+},	{
+    id: "sake sword",
+    name: "Sake Sword",
+    damage: 15,
+	lifetime: .25,
+    cooldown: 1,
+	bullet_speed: 0,
+	is_auto: false,
+    sprite: spr_sake_sword,
+	scale: 1,
+    fire_function: function(player) {
+      
+		initialize_melee(damage,lifetime);
+		
+        
+    }
 }
 ];
 
 
-obj_player.weapon = global.weapons[3];
+obj_player.weapon = global.weapons[5];

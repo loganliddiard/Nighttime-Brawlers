@@ -115,7 +115,7 @@ function install_station(station){
 // Fill the pool
 global.shop_pool = [
 
-    create_shop_item("'Shot' gun", spr_shotgun, 150, "Shoots a spread of bullets dealing a good amount of damage.",function(){ give_gun("shotgun")}),
+    create _shop_item("'Shot' gun", spr_shotgun, 150, "Shoots a spread of bullets dealing a good amount of damage.",function(){ give_gun("shotgun")}),
     create_shop_item("Hearty Wine", spr_martini, 70, "Gives you +1 max health", function() { obj_player.max_health += 1; obj_player.player_hp +=1; }),
     create_shop_item("Discount", spr_price_tag, 60, "Reduces item prices in future shops.", function() { obj_player.shop_discount += 0.1; }),
 	create_shop_item("Drink Tray",spr_reroll, 35, "Allows you to carry more drinks.", function() { array_resize(obj_player.hands, array_length(obj_player.hands)+1); obj_player.hands[array_length(obj_player.hands)-1] = -1 }),
@@ -131,6 +131,9 @@ global.shop_pool = [
 	create_shop_item("Pirates Pleasure", spr_pirates_pleasure, 150, "Shoots heavier bullets that deal a good amount of damage",function(){ give_gun("pirates pleasure")}),
 	create_shop_item("Sour Shooter", spr_sour_shooter, 150, "Shoots lemons at high speed.",function(){ give_gun("sour shooter")}),
 	create_shop_item("Table Set", spr_table, 200, "Gives you +2 seats in your bar.",function(){ spawn_table()}),
+	create_shop_item("Sake Sword", spr_sake_sword, 175, "A really powerful sword passed down from generations.",function(){ give_gun("sake sword")}),
+	create_shop_item("Long Barrel", spr_long_barrel, 50, "Makes bullets travel farther.",function(){ weapons_data.long_barrel = true;}),
+
 ];
 
 shop.populate_shop();

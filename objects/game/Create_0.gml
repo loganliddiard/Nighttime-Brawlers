@@ -1,5 +1,5 @@
 
-current_phase = phase.last_call;
+current_phase = phase.serve;
 cs = 32;
 day = 1;
 
@@ -8,6 +8,7 @@ last_call_time = 90; //default should be 90
 transition_time = 3; //default is 3 (may change later
 
 rent_amount = 100; //first weeks rent is 100 dollars
+bar_stars = 1; //game multiplier for passive income / prices
 
 total_money = 1000000; //thes should always start at zero but can be adjusted for debugging
 earned_money = 0;
