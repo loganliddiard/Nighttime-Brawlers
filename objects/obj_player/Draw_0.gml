@@ -13,7 +13,7 @@ var base_frame = (current_time div 600) mod 2; // idle = 2 frames, walk = 4
 if (animation_state == BaseAnim.WALK) {
 	base_frame = (current_time div 100) mod 4;
 }
-if (animation_state == BaseAnim.DODGE) {
+if (animation_state == BaseAnim.DODGE or animation_state ==BaseAnim.DUCK) {
 	base_frame = 0; // Only one frame for now
 }
 

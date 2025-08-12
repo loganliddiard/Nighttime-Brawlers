@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_frank_sprite_sheet",
   "bboxMode":0,
-  "bbox_bottom":191,
+  "bbox_bottom":255,
   "bbox_left":0,
   "bbox_right":169,
   "bbox_top":0,

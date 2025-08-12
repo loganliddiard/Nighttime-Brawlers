@@ -42,7 +42,7 @@ enum BaseAnim {
     IDLE = 0,
     WALK = 1,
     DODGE = 2,
-    BACK = 3  // Eventually
+    DUCK = 3,
 }
 
 // Hand rows
@@ -50,6 +50,7 @@ enum HandAnim {
     IDLE = 0,
     WALK = 1,
     DRINK = 2,
+	
     GUN_BASE = 3  // Start gun rows here
 }
 

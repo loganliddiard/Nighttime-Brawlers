@@ -35,12 +35,25 @@ function spawn_stool(){
 
 }
 
+function spawn_passive_income(obj){
+	var total = instance_number(obj_passive_income_slot);
+	if (total > 0) {
+		var random_index = irandom(total - 1);
+		var selected_slot = instance_find(obj_passive_income_slot, random_index);
+		
+		selected_slot.spawn = obj;
+		
+		instance_destroy(selected_slot);
+	}
+
+}
+
 function spawn_table(){
 	var total = instance_number(obj_buyable_table);
 	if (total > 0) {
 		var random_index = irandom(total - 1);
-		var selected_stool = instance_find(obj_buyable_table, random_index);
-		instance_destroy(selected_stool);
+		var selected_table = instance_find(obj_buyable_table, random_index);
+		instance_destroy(selected_table);
 	}
 
 }
@@ -115,7 +128,7 @@ function install_station(station){
 // Fill the pool
 global.shop_pool = [
 
-    create _shop_item("'Shot' gun", spr_shotgun, 150, "Shoots a spread of bullets dealing a good amount of damage.",function(){ give_gun("shotgun")}),
+    create_shop_item("'Shot' gun", spr_shotgun, 150, "Shoots a spread of bullets dealing a good amount of damage.",function(){ give_gun("shotgun")}),
     create_shop_item("Hearty Wine", spr_martini, 70, "Gives you +1 max health", function() { obj_player.max_health += 1; obj_player.player_hp +=1; }),
     create_shop_item("Discount", spr_price_tag, 60, "Reduces item prices in future shops.", function() { obj_player.shop_discount += 0.1; }),
 	create_shop_item("Drink Tray",spr_reroll, 35, "Allows you to carry more drinks.", function() { array_resize(obj_player.hands, array_length(obj_player.hands)+1); obj_player.hands[array_length(obj_player.hands)-1] = -1 }),
@@ -133,7 +146,10 @@ global.shop_pool = [
 	create_shop_item("Table Set", spr_table, 200, "Gives you +2 seats in your bar.",function(){ spawn_table()}),
 	create_shop_item("Sake Sword", spr_sake_sword, 175, "A really powerful sword passed down from generations.",function(){ give_gun("sake sword")}),
 	create_shop_item("Long Barrel", spr_long_barrel, 50, "Makes bullets travel farther.",function(){ weapons_data.long_barrel = true;}),
-
+	create_shop_item("Long Barrel", spr_pooltable_icon, 50, "Places a Pool Table inside your bar. Generates Money based on your popularity. Who doesn't like a classic game of 8-Ball?",function(){ spawn_passive_income(obj_pooltable)}),
+	create_shop_item("Long Barrel", spr_kareoke_icon, 50, "Places a Kareoke Machine inside your bar. Generates Money based on your popularity. Sing your heart and wallet out!",function(){ spawn_passive_income(obj_kareoke_machine)}),
+	create_shop_item("Long Barrel", spr_jukebox_icon, 50, "Places a Jukebox inside your bar. Generates money based on your popularity. Time to listen to those catchy pop tunes nonstop.",function(){ spawn_passive_income(obj_jukebox)}),
+	create_shop_item("Long Barrel", spr_dartboard_icon, 50, "Places a Dart Board inside your bar. Generates money based on your popularity. Watch for stray darts!",function(){ spawn_passive_income(obj_dartboard)}),
 ];
 
 shop.populate_shop();

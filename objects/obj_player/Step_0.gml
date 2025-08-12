@@ -296,12 +296,24 @@ switch(current_state) {
 	case play_state.dodge:
 		animation_state = BaseAnim.DODGE;
 		break;
+	case play_state.ducking:
+	
+		animation_state = BaseAnim.DUCK;
+		break;
 
 	case play_state.walk:
 		animation_state = BaseAnim.WALK;
 		break;
 
 	case play_state.behind_bar:
+	
+		if(h_input != 0){
+			animation_state = BaseAnim.WALK;
+		}else{
+			animation_state = BaseAnim.IDLE;
+		}
+		
+		break;
 	case play_state.idle:
 	default:
 		animation_state = BaseAnim.IDLE;

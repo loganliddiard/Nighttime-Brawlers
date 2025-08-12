@@ -1,10 +1,10 @@
 
-current_phase = phase.serve;
+current_phase = phase.last_call;
 cs = 32;
 day = 1;
 
-serve_time = 120; //default should be 120
-last_call_time = 90; //default should be 90
+serve_time = 10; //default should be 120
+last_call_time = 10; //default should be 90
 transition_time = 3; //default is 3 (may change later
 
 rent_amount = 100; //first weeks rent is 100 dollars

@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_bar_interior",
   "bboxMode":0,
-  "bbox_bottom":93,
+  "bbox_bottom":127,
   "bbox_left":32,
   "bbox_right":127,
   "bbox_top":0,
@@ -14,8 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"b64c7c14-9ee1-49a0-9cfb-bb4dca626af9","name":"b64c7c14-9ee1-49a0-9cfb-bb4dca626af9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":16,
-  "gridY":32,
+  "gridX":32,
+  "gridY":16,
   "height":128,
   "HTile":false,
   "layers":[

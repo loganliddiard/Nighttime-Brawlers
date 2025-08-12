@@ -19,6 +19,25 @@ switch(current_phase){
 	current_phase = phase.upkeep;
 	alarm[1] = game_get_speed(gamespeed_fps) * transition_time;
 	
+	
+	var passive_total = 0;
+	var total = instance_number(obj_passive_income);
+	if (total > 0) {
+	
+		for(var i = 0;i < total; i++){
+			var selected_slot = instance_find(obj_passive_income, i);
+		
+			passive_total += selected_slot.passive_base * bar_stars;
+			
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
 	total_money += earned_money;
 	total_money += tip_money;
 	tip_money = 0;
