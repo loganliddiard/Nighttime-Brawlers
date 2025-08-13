@@ -105,4 +105,4 @@ global.weapons = [
 ];
 
 
-obj_player.weapon = global.weapons[5];
+obj_player.weapon = global.weapons[0];

@@ -146,10 +146,11 @@ global.shop_pool = [
 	create_shop_item("Table Set", spr_table, 200, "Gives you +2 seats in your bar.",function(){ spawn_table()}),
 	create_shop_item("Sake Sword", spr_sake_sword, 175, "A really powerful sword passed down from generations.",function(){ give_gun("sake sword")}),
 	create_shop_item("Long Barrel", spr_long_barrel, 50, "Makes bullets travel farther.",function(){ weapons_data.long_barrel = true;}),
-	create_shop_item("Long Barrel", spr_pooltable_icon, 50, "Places a Pool Table inside your bar. Generates Money based on your popularity. Who doesn't like a classic game of 8-Ball?",function(){ spawn_passive_income(obj_pooltable)}),
-	create_shop_item("Long Barrel", spr_kareoke_icon, 50, "Places a Kareoke Machine inside your bar. Generates Money based on your popularity. Sing your heart and wallet out!",function(){ spawn_passive_income(obj_kareoke_machine)}),
-	create_shop_item("Long Barrel", spr_jukebox_icon, 50, "Places a Jukebox inside your bar. Generates money based on your popularity. Time to listen to those catchy pop tunes nonstop.",function(){ spawn_passive_income(obj_jukebox)}),
-	create_shop_item("Long Barrel", spr_dartboard_icon, 50, "Places a Dart Board inside your bar. Generates money based on your popularity. Watch for stray darts!",function(){ spawn_passive_income(obj_dartboard)}),
+	create_shop_item("Pool Table", spr_pooltable_icon, 50, "Places a Pool Table inside your bar. Generates Money based on your popularity. Who doesn't like a classic game of 8-Ball?",function(){ spawn_passive_income(obj_pooltable)}),
+	create_shop_item("Karaoke Machine", spr_kareoke_icon, 50, "Places a Karaoke Machine inside your bar. Generates Money based on your popularity. Sing your heart and wallet out!",function(){ spawn_passive_income(obj_kareoke_machine)}),
+	create_shop_item("Jukebox", spr_jukebox_icon, 50, "Places a Jukebox inside your bar. Generates money based on your popularity. Time to listen to those catchy pop tunes nonstop.",function(){ spawn_passive_income(obj_jukebox)}),
+	create_shop_item("Dart Board", spr_dartboard_icon, 50, "Places a Dart Board inside your bar. Generates money based on your popularity. Watch for stray darts!",function(){ spawn_passive_income(obj_dartboard)}),
+	create_shop_item("Good Review", spr_good_review, 50, "Leaves a good review online about your bar. Increases Bar Stars.",function(){ game.bar_stars += .5}),
 ];
 
 shop.populate_shop();
