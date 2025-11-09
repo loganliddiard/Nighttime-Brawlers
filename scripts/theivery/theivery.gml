@@ -1,4 +1,9 @@
 function theivery() {
+	
+	 if (!stealing){
+		 is_moving = true;
+		 }
+	
     var step_dist = move_speed;
 
     // === STEAL MODE ===
@@ -13,7 +18,8 @@ if (stolen_cash == 0) {
 
         if (!stealing) {
             stealing = true; // Only set once
-            alarm[0] = game_get_speed(gamespeed_fps) * steal_time;
+			is_moving = false;
+            alarm[2] = game_get_speed(gamespeed_fps) * steal_time;
         }
 
         return;
@@ -35,6 +41,8 @@ if (stolen_cash == 0) {
     // === FLEE MODE ===
     var dx = target_x - x;
     var dy = target_y - y;
+	
+	is_moving = true;
 
     if (abs(dx) < step_dist && abs(dy) < step_dist) {
         // Reached escape point — destroy or mark as escaped

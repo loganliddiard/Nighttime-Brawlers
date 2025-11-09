@@ -2,9 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_beer_gunner",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_beer_gunner",
@@ -14,8 +12,8 @@
     "path":"folders/Objects/Enemies/Beer Themed Enemies.yy",
   },
   "parentObjectId":{
-    "name":"enemy_collision",
-    "path":"objects/enemy_collision/enemy_collision.yy",
+    "name":"enemy_parent",
+    "path":"objects/enemy_parent/enemy_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

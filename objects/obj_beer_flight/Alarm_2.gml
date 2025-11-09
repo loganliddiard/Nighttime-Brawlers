@@ -1,4 +1,7 @@
-// Alarm[0] — called after stealing
+//alarm unique to beer flight
+
+
+// Alarm[2] — called after stealing
 target_x = spawn_in_x;
 target_y = spawn_in_y;
 

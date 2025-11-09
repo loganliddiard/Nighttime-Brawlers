@@ -1,6 +1,10 @@
+
+event_inherited()
+
+
 behavior_function = theivery;
-spawn_in_x = noone;
-spawn_in_y = noone;
+
+spr_sheet = spr_beer_flight_sheet; 
 
 enemy_health = 10;
 

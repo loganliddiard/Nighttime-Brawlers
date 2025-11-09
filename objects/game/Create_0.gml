@@ -1,17 +1,17 @@
 
-current_phase = phase.last_call;
+current_phase = phase.serve;
 cs = 32;
 day = 1;
 
-serve_time = 1; //default should be 120
-last_call_time = 120; //default should be 90
+serve_time = 30; //default should be 120
+last_call_time = 35; //default should be 90
 transition_time = 3; //default is 3 (may change later
 
 rent_amount = 100; //first weeks rent is 100 dollars
 bar_stars = 1; //game multiplier for passive income / prices
 
 total_money = 1000000; //thes should always start at zero but can be adjusted for debugging
-earned_money = 0;
+earned_money = 100000;
 tip_money = 0;
 
 global.grid = mp_grid_create(0, 0, room_width div cs, room_height div cs, cs, cs);
